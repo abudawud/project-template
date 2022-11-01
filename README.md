@@ -60,11 +60,33 @@ php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
         });
 ```
 
-### 4. Finally
+### 4. Configure Spatie
+
+1. Add `Spatie\Permission\Traits\HasRoles` trait to User model 
+2. enable wildcard permission by setting `enable_wildcard_permission` to `true` in `config/permission.php`
+3. If we use different DB Host for users model and permission / roles. Then we shoud overide connection
+
+### 5. Configure AdminLTE
+
+1. Costomize login page
+```php
+@section('css')
+<style>
+.login-page {
+		background-image: url("{{ asset('assets/img/login.jpg') }}");
+		background-size: cover !important;
+}
+</style>
+@stop
+```
+2. Install required plugins
+3. Customize everything
+
+### X. Finally
 
 Costomize all think that we need
 
-#### 4.1 Custom `users` table and username
+#### X.1 Custom `users` table and username
 
 1. Add DB connection to `config/database.php` if the table on the other database host.
 2. Overide `$connection` and `$table` in User model
@@ -79,3 +101,4 @@ Costomize all think that we need
             }
         });
 ```
+5. Disable unused funtion in `config/fortify.php`
