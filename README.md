@@ -17,6 +17,8 @@ composer require spatie/laravel-permission
 composer require barryvdh/laravel-debugbar
 # install datatables server side library for laravel
 composer require yajra/laravel-datatables-oracle
+# install laravel form
+composer require laravelcollective/html
 
 # -----------------------
 # PUBLISH REQUIRED CONFIG
